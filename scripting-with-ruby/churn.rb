@@ -15,18 +15,21 @@ end
 def asterix_for(an_integer)
 	if an_integer == 0
 	 	'-'
-	else 
-	 '*' * (an_integer / 5.0).round
+  elsif an_integer/5.0 < 1 
+	 '*'
+  else    
+    '*' * (an_integer / 5.0).round
 	end
-
-	#return '*' * (an_integer / 5.0).round
 end
 
 
 def subsystem_line(susbsystem_name, change_count)
 	asterix = asterix_for(change_count)
-
-	"#{susbsystem_name.rjust(14)} #{asterix} (#{change_count})"
+  if change_count == 0
+    '-'
+  else
+    "#{susbsystem_name.rjust(14)} (#{change_count} changes) #{asterix.ljust(14)} "
+  end
 end
 
 def change_count_for(name, start_date)
@@ -53,13 +56,13 @@ end
 
 
 
-if $0 == __FILE__    #(1)
-  subsystem_names = ['audit', 'fulfillment', 'persistence',    #(2)
+if $0 == __FILE__    
+  subsystem_names = ['audit', 'fulfillment', 'persistence',    
                      'ui', 'util', 'inventory']
-  start_date = month_before(Time.now)       #(3)
-
-  puts header(start_date)                   #(4)
+  start_date = month_before(Time.now)       
+  
+  puts header(start_date)                   
   subsystem_names.each do | name |
-    puts subsystem_line(name, change_count_for(name,start_date)) #(5)  
+    puts subsystem_line(name, change_count_for(name,'2005-06-15 19:39:25 +1000')) 
   end
 end

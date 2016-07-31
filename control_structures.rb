@@ -9,6 +9,21 @@ else
 	puts "The person is old"
 end
 
+
+# one line if 
+
+input = 5
+output = (input < 0) ? 0 : input
+
+# shorthand
+
+if raining?(here) 
+	carry('umbrella' )
+end
+
+carry('umbrella') if raining?(here)
+
+
 # unless
 
 var = false

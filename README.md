@@ -1,4 +1,4 @@
-learningruby
+Ruby Scripts
 ============
 
-My learning resources for Ruby
+A work-in-progress collection of ruby scripts. 

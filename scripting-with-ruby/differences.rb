@@ -28,7 +28,7 @@ def inventory_from(filename)
   end
 end
 
-def compare_inventory_files(old_file, new_file) # (2)
+def compare_inventory_files(old_file, new_file) 
   old_inventory = inventory_from(old_file)
   new_inventory = inventory_from(new_file)
 
@@ -40,7 +40,8 @@ def compare_inventory_files(old_file, new_file) # (2)
   puts old_inventory - new_inventory
 end
 
-if $0 == __FILE__ # (3)
+
+if $0 == __FILE__ 
   check_usage 
   compare_inventory_files(ARGV[0], ARGV[1]) 
 end
