@@ -2,6 +2,13 @@
 
 task_number = ARGV.shift.to_i
 
+
+# Create  a new file
+# Check if to-do is the same as counter 
+# If the same, write to new file as done
+# Else, write as is to new file
+# Rename new-file to old file name
+
 File.open('todo.txt','r') do |file|
 	File.open('todo.txt.new','w') do |new_file|
 		counter = 1
